@@ -1,0 +1,53 @@
+
+entity UserProfile {
+	id String
+	name String
+    priority Int
+    
+}
+
+entity DashboardLayout {
+	id String
+	minCols Int
+    minRows Int
+    maxRows Int
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity DashboardItem {
+	id String
+    cols Int
+    rows Int
+    x Int
+	y Int,
+	content String,
+	city String,
+	stateProvince String
+}
+
+
+relationship ManyToMany {
+	UserProfile to DashboardItem
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	UserProfile to DashboardLayout
+	
+}
+
+relationship ManyToOne {
+	UserProfile to DashboardLayout
+}
+
+// Set pagination options
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
