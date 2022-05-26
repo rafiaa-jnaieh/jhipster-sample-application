@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20220526100021",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "user_profile",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserProfile",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dashboardLayout",
+      "otherEntityRelationshipName": "userProfile",
+      "relationshipName": "dashboardLayout",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dashboardItem",
+      "otherEntityRelationshipName": "userProfile",
+      "relationshipName": "dashboardItem",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

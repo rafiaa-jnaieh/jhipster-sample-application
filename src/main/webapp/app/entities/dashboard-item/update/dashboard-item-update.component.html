@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dashboard-item-heading"
+        data-cy="DashboardItemCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.home.createOrEditLabel"
+      >
+        Create or edit a Dashboard Item
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.cols" for="field_cols">Cols</label>
+          <input type="number" class="form-control" name="cols" id="field_cols" data-cy="cols" formControlName="cols" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.rows" for="field_rows">Rows</label>
+          <input type="number" class="form-control" name="rows" id="field_rows" data-cy="rows" formControlName="rows" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.x" for="field_x">X</label>
+          <input type="number" class="form-control" name="x" id="field_x" data-cy="x" formControlName="x" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.y" for="field_y">Y</label>
+          <input type="number" class="form-control" name="y" id="field_y" data-cy="y" formControlName="y" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.content" for="field_content">Content</label>
+          <input type="text" class="form-control" name="content" id="field_content" data-cy="content" formControlName="content" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.city" for="field_city">City</label>
+          <input type="text" class="form-control" name="city" id="field_city" data-cy="city" formControlName="city" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.stateProvince" for="field_stateProvince"
+            >State Province</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="stateProvince"
+            id="field_stateProvince"
+            data-cy="stateProvince"
+            formControlName="stateProvince"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
