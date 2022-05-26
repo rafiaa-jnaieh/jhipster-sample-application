@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dashboardItem">
+      <h2 data-cy="dashboardItemDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.detail.title">Dashboard Item</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.id">Id</span></dt>
+        <dd>
+          <span>{{ dashboardItem.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.cols">Cols</span></dt>
+        <dd>
+          <span>{{ dashboardItem.cols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.rows">Rows</span></dt>
+        <dd>
+          <span>{{ dashboardItem.rows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.x">X</span></dt>
+        <dd>
+          <span>{{ dashboardItem.x }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.y">Y</span></dt>
+        <dd>
+          <span>{{ dashboardItem.y }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.content">Content</span></dt>
+        <dd>
+          <span>{{ dashboardItem.content }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.city">City</span></dt>
+        <dd>
+          <span>{{ dashboardItem.city }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.stateProvince">State Province</span></dt>
+        <dd>
+          <span>{{ dashboardItem.stateProvince }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardItem.userProfile">User Profile</span></dt>
+        <dd>
+          <div *ngIf="dashboardItem.userProfile">
+            <a [routerLink]="['/user-profile', dashboardItem.userProfile?.id, 'view']">{{ dashboardItem.userProfile?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dashboard-item', dashboardItem.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
