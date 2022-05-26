@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="DashboardLayoutHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.home.title">Dashboard Layouts</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-dashboard-layout"
+        [routerLink]="['/dashboard-layout/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.home.createLabel"> Create a new Dashboard Layout </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dashboardLayouts?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.home.notFound">No dashboardLayouts found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dashboardLayouts && dashboardLayouts.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.id">Id</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.minCols">Min Cols</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.minRows">Min Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.maxRows">Max Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.userProfile">User Profile</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dashboardLayout of dashboardLayouts; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/dashboard-layout', dashboardLayout.id, 'view']">{{ dashboardLayout.id }}</a>
+          </td>
+          <td>{{ dashboardLayout.minCols }}</td>
+          <td>{{ dashboardLayout.minRows }}</td>
+          <td>{{ dashboardLayout.maxRows }}</td>
+          <td>
+            <div *ngIf="dashboardLayout.userProfile">
+              <a [routerLink]="['/user-profile', dashboardLayout.userProfile?.id, 'view']">{{ dashboardLayout.userProfile?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/dashboard-layout', dashboardLayout.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/dashboard-layout', dashboardLayout.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dashboardLayout)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

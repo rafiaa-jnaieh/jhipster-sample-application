@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dashboardLayout">
+      <h2 data-cy="dashboardLayoutDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.detail.title">Dashboard Layout</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.id">Id</span></dt>
+        <dd>
+          <span>{{ dashboardLayout.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.minCols">Min Cols</span></dt>
+        <dd>
+          <span>{{ dashboardLayout.minCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.minRows">Min Rows</span></dt>
+        <dd>
+          <span>{{ dashboardLayout.minRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.maxRows">Max Rows</span></dt>
+        <dd>
+          <span>{{ dashboardLayout.maxRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.userProfile">User Profile</span></dt>
+        <dd>
+          <div *ngIf="dashboardLayout.userProfile">
+            <a [routerLink]="['/user-profile', dashboardLayout.userProfile?.id, 'view']">{{ dashboardLayout.userProfile?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dashboard-layout', dashboardLayout.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

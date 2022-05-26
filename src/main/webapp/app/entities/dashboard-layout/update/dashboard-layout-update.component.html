@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dashboard-layout-heading"
+        data-cy="DashboardLayoutCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.home.createOrEditLabel"
+      >
+        Create or edit a Dashboard Layout
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.minCols" for="field_minCols">Min Cols</label>
+          <input type="number" class="form-control" name="minCols" id="field_minCols" data-cy="minCols" formControlName="minCols" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.minRows" for="field_minRows">Min Rows</label>
+          <input type="number" class="form-control" name="minRows" id="field_minRows" data-cy="minRows" formControlName="minRows" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.maxRows" for="field_maxRows">Max Rows</label>
+          <input type="number" class="form-control" name="maxRows" id="field_maxRows" data-cy="maxRows" formControlName="maxRows" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardLayout.userProfile" for="field_userProfile"
+            >User Profile</label
+          >
+          <select class="form-control" id="field_userProfile" data-cy="userProfile" name="userProfile" formControlName="userProfile">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                userProfileOption.id === editForm.get('userProfile')!.value?.id ? editForm.get('userProfile')!.value : userProfileOption
+              "
+              *ngFor="let userProfileOption of userProfilesSharedCollection; trackBy: trackUserProfileById"
+            >
+              {{ userProfileOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
