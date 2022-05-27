@@ -1,0 +1,200 @@
+<div>
+  <h2 id="page-heading" data-cy="DashboardConfigHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.home.title">Dashboard Configs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-dashboard-config"
+        [routerLink]="['/dashboard-config/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.home.createLabel"> Create a new Dashboard Config </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dashboardConfigs?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.home.notFound">No dashboardConfigs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="dashboardConfigs && dashboardConfigs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.id">Id</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.margin">Margin</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMargin">Outer Margin</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginTop">Outer Margin Top</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginRight">Outer Margin Right</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginBottom">Outer Margin Bottom</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginLeft">Outer Margin Left</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.useTransformPositioning">Use Transform Positioning</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.mobileBreakpoint">Mobile Breakpoint</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.useBodyForBreakpoint">Use Body For Breakpoint</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minCols">Min Cols</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxCols">Max Cols</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minRows">Min Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxRows">Max Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemCols">Max Item Cols</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemCols">Min Item Cols</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemRows">Max Item Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemRows">Min Item Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemArea">Max Item Area</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemArea">Min Item Area</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.defaultItemCols">Default Item Cols</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.defaultItemRows">Default Item Rows</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.fixedColWidth">Fixed Col Width</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.fixedRowHeight">Fixed Row Height</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.keepFixedHeightInMobile">Keep Fixed Height In Mobile</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.keepFixedWidthInMobile">Keep Fixed Width In Mobile</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollSensitivity">Scroll Sensitivity</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollSpeed">Scroll Speed</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellClick">Enable Empty Cell Click</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellContextMenu"
+              >Enable Empty Cell Context Menu</span
+            >
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellDrop">Enable Empty Cell Drop</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellDrag">Enable Empty Cell Drag</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableOccupiedCellDrop">Enable Occupied Cell Drop</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.emptyCellDragMaxCols">Empty Cell Drag Max Cols</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.emptyCellDragMaxRows">Empty Cell Drag Max Rows</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.ignoreMarginInRow">Ignore Margin In Row</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.draggable">Draggable</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.resizable">Resizable</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.swap">Swap</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.pushItems">Push Items</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disablePushOnDrag">Disable Push On Drag</span>
+          </th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disablePushOnResize">Disable Push On Resize</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.pushResizeItems">Push Resize Items</span></th>
+          <th scope="col">
+            <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disableWindowResize">Disable Window Resize</span>
+          </th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disableWarnings">Disable Warnings</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollToNewItems">Scroll To New Items</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dashboardConfig of dashboardConfigs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/dashboard-config', dashboardConfig.id, 'view']">{{ dashboardConfig.id }}</a>
+          </td>
+          <td>{{ dashboardConfig.margin }}</td>
+          <td>{{ dashboardConfig.outerMargin }}</td>
+          <td>{{ dashboardConfig.outerMarginTop }}</td>
+          <td>{{ dashboardConfig.outerMarginRight }}</td>
+          <td>{{ dashboardConfig.outerMarginBottom }}</td>
+          <td>{{ dashboardConfig.outerMarginLeft }}</td>
+          <td>{{ dashboardConfig.useTransformPositioning }}</td>
+          <td>{{ dashboardConfig.mobileBreakpoint }}</td>
+          <td>{{ dashboardConfig.useBodyForBreakpoint }}</td>
+          <td>{{ dashboardConfig.minCols }}</td>
+          <td>{{ dashboardConfig.maxCols }}</td>
+          <td>{{ dashboardConfig.minRows }}</td>
+          <td>{{ dashboardConfig.maxRows }}</td>
+          <td>{{ dashboardConfig.maxItemCols }}</td>
+          <td>{{ dashboardConfig.minItemCols }}</td>
+          <td>{{ dashboardConfig.maxItemRows }}</td>
+          <td>{{ dashboardConfig.minItemRows }}</td>
+          <td>{{ dashboardConfig.maxItemArea }}</td>
+          <td>{{ dashboardConfig.minItemArea }}</td>
+          <td>{{ dashboardConfig.defaultItemCols }}</td>
+          <td>{{ dashboardConfig.defaultItemRows }}</td>
+          <td>{{ dashboardConfig.fixedColWidth }}</td>
+          <td>{{ dashboardConfig.fixedRowHeight }}</td>
+          <td>{{ dashboardConfig.keepFixedHeightInMobile }}</td>
+          <td>{{ dashboardConfig.keepFixedWidthInMobile }}</td>
+          <td>{{ dashboardConfig.scrollSensitivity }}</td>
+          <td>{{ dashboardConfig.scrollSpeed }}</td>
+          <td>{{ dashboardConfig.enableEmptyCellClick }}</td>
+          <td>{{ dashboardConfig.enableEmptyCellContextMenu }}</td>
+          <td>{{ dashboardConfig.enableEmptyCellDrop }}</td>
+          <td>{{ dashboardConfig.enableEmptyCellDrag }}</td>
+          <td>{{ dashboardConfig.enableOccupiedCellDrop }}</td>
+          <td>{{ dashboardConfig.emptyCellDragMaxCols }}</td>
+          <td>{{ dashboardConfig.emptyCellDragMaxRows }}</td>
+          <td>{{ dashboardConfig.ignoreMarginInRow }}</td>
+          <td>{{ dashboardConfig.draggable }}</td>
+          <td>{{ dashboardConfig.resizable }}</td>
+          <td>{{ dashboardConfig.swap }}</td>
+          <td>{{ dashboardConfig.pushItems }}</td>
+          <td>{{ dashboardConfig.disablePushOnDrag }}</td>
+          <td>{{ dashboardConfig.disablePushOnResize }}</td>
+          <td>{{ dashboardConfig.pushResizeItems }}</td>
+          <td>{{ dashboardConfig.disableWindowResize }}</td>
+          <td>{{ dashboardConfig.disableWarnings }}</td>
+          <td>{{ dashboardConfig.scrollToNewItems }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/dashboard-config', dashboardConfig.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/dashboard-config', dashboardConfig.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(dashboardConfig)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

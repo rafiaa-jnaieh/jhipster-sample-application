@@ -1,0 +1,106 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-user-profile-heading"
+        data-cy="UserProfileCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.userProfile.home.createOrEditLabel"
+      >
+        Create or edit a User Profile
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.userProfile.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.userProfile.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.userProfile.priority" for="field_priority">Priority</label>
+          <input type="number" class="form-control" name="priority" id="field_priority" data-cy="priority" formControlName="priority" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.userProfile.dashboardLayout" for="field_dashboardLayout"
+            >Dashboard Layout</label
+          >
+          <select
+            class="form-control"
+            id="field_dashboardLayout"
+            data-cy="dashboardLayout"
+            name="dashboardLayout"
+            formControlName="dashboardLayout"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                dashboardLayoutOption.id === editForm.get('dashboardLayout')!.value?.id
+                  ? editForm.get('dashboardLayout')!.value
+                  : dashboardLayoutOption
+              "
+              *ngFor="let dashboardLayoutOption of dashboardLayoutsSharedCollection; trackBy: trackDashboardLayoutById"
+            >
+              {{ dashboardLayoutOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.userProfile.dashboardConfig" for="field_dashboardConfig"
+            >Dashboard Config</label
+          >
+          <select
+            class="form-control"
+            id="field_dashboardConfig"
+            data-cy="dashboardConfig"
+            name="dashboardConfig"
+            formControlName="dashboardConfig"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                dashboardConfigOption.id === editForm.get('dashboardConfig')!.value?.id
+                  ? editForm.get('dashboardConfig')!.value
+                  : dashboardConfigOption
+              "
+              *ngFor="let dashboardConfigOption of dashboardConfigsSharedCollection; trackBy: trackDashboardConfigById"
+            >
+              {{ dashboardConfigOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
