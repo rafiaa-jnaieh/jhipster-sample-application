@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "dashboardLayout": {
+      "home": {
+        "title": "Dashboard Layouts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dashboard Layout",
+        "createOrEditLabel": "Create or edit a Dashboard Layout",
+        "notFound": "No Dashboard Layouts found"
+      },
+      "created": "A new Dashboard Layout is created with identifier {{ param }}",
+      "updated": "A Dashboard Layout is updated with identifier {{ param }}",
+      "deleted": "A Dashboard Layout is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dashboard Layout {{ id }}?"
+      },
+      "detail": {
+        "title": "Dashboard Layout"
+      },
+      "id": "Id",
+      "minCols": "Min Cols",
+      "minRows": "Min Rows",
+      "maxRows": "Max Rows",
+      "userProfile": "User Profile"
+    }
+  }
+}
