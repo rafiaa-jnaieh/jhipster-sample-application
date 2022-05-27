@@ -1,0 +1,661 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dashboard-config-heading"
+        data-cy="DashboardConfigCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.home.createOrEditLabel"
+      >
+        Create or edit a Dashboard Config
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.margin" for="field_margin">Margin</label>
+          <input type="number" class="form-control" name="margin" id="field_margin" data-cy="margin" formControlName="margin" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMargin" for="field_outerMargin"
+            >Outer Margin</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="outerMargin"
+            id="field_outerMargin"
+            data-cy="outerMargin"
+            formControlName="outerMargin"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginTop" for="field_outerMarginTop"
+            >Outer Margin Top</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="outerMarginTop"
+            id="field_outerMarginTop"
+            data-cy="outerMarginTop"
+            formControlName="outerMarginTop"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginRight"
+            for="field_outerMarginRight"
+            >Outer Margin Right</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="outerMarginRight"
+            id="field_outerMarginRight"
+            data-cy="outerMarginRight"
+            formControlName="outerMarginRight"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginBottom"
+            for="field_outerMarginBottom"
+            >Outer Margin Bottom</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="outerMarginBottom"
+            id="field_outerMarginBottom"
+            data-cy="outerMarginBottom"
+            formControlName="outerMarginBottom"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginLeft" for="field_outerMarginLeft"
+            >Outer Margin Left</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="outerMarginLeft"
+            id="field_outerMarginLeft"
+            data-cy="outerMarginLeft"
+            formControlName="outerMarginLeft"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.useTransformPositioning"
+            for="field_useTransformPositioning"
+            >Use Transform Positioning</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="useTransformPositioning"
+            id="field_useTransformPositioning"
+            data-cy="useTransformPositioning"
+            formControlName="useTransformPositioning"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.mobileBreakpoint"
+            for="field_mobileBreakpoint"
+            >Mobile Breakpoint</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="mobileBreakpoint"
+            id="field_mobileBreakpoint"
+            data-cy="mobileBreakpoint"
+            formControlName="mobileBreakpoint"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.useBodyForBreakpoint"
+            for="field_useBodyForBreakpoint"
+            >Use Body For Breakpoint</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="useBodyForBreakpoint"
+            id="field_useBodyForBreakpoint"
+            data-cy="useBodyForBreakpoint"
+            formControlName="useBodyForBreakpoint"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minCols" for="field_minCols">Min Cols</label>
+          <input type="number" class="form-control" name="minCols" id="field_minCols" data-cy="minCols" formControlName="minCols" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxCols" for="field_maxCols">Max Cols</label>
+          <input type="number" class="form-control" name="maxCols" id="field_maxCols" data-cy="maxCols" formControlName="maxCols" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minRows" for="field_minRows">Min Rows</label>
+          <input type="number" class="form-control" name="minRows" id="field_minRows" data-cy="minRows" formControlName="minRows" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxRows" for="field_maxRows">Max Rows</label>
+          <input type="number" class="form-control" name="maxRows" id="field_maxRows" data-cy="maxRows" formControlName="maxRows" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemCols" for="field_maxItemCols"
+            >Max Item Cols</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="maxItemCols"
+            id="field_maxItemCols"
+            data-cy="maxItemCols"
+            formControlName="maxItemCols"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemCols" for="field_minItemCols"
+            >Min Item Cols</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="minItemCols"
+            id="field_minItemCols"
+            data-cy="minItemCols"
+            formControlName="minItemCols"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemRows" for="field_maxItemRows"
+            >Max Item Rows</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="maxItemRows"
+            id="field_maxItemRows"
+            data-cy="maxItemRows"
+            formControlName="maxItemRows"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemRows" for="field_minItemRows"
+            >Min Item Rows</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="minItemRows"
+            id="field_minItemRows"
+            data-cy="minItemRows"
+            formControlName="minItemRows"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemArea" for="field_maxItemArea"
+            >Max Item Area</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="maxItemArea"
+            id="field_maxItemArea"
+            data-cy="maxItemArea"
+            formControlName="maxItemArea"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemArea" for="field_minItemArea"
+            >Min Item Area</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="minItemArea"
+            id="field_minItemArea"
+            data-cy="minItemArea"
+            formControlName="minItemArea"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.defaultItemCols" for="field_defaultItemCols"
+            >Default Item Cols</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="defaultItemCols"
+            id="field_defaultItemCols"
+            data-cy="defaultItemCols"
+            formControlName="defaultItemCols"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.defaultItemRows" for="field_defaultItemRows"
+            >Default Item Rows</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="defaultItemRows"
+            id="field_defaultItemRows"
+            data-cy="defaultItemRows"
+            formControlName="defaultItemRows"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.fixedColWidth" for="field_fixedColWidth"
+            >Fixed Col Width</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="fixedColWidth"
+            id="field_fixedColWidth"
+            data-cy="fixedColWidth"
+            formControlName="fixedColWidth"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.fixedRowHeight" for="field_fixedRowHeight"
+            >Fixed Row Height</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="fixedRowHeight"
+            id="field_fixedRowHeight"
+            data-cy="fixedRowHeight"
+            formControlName="fixedRowHeight"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.keepFixedHeightInMobile"
+            for="field_keepFixedHeightInMobile"
+            >Keep Fixed Height In Mobile</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="keepFixedHeightInMobile"
+            id="field_keepFixedHeightInMobile"
+            data-cy="keepFixedHeightInMobile"
+            formControlName="keepFixedHeightInMobile"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.keepFixedWidthInMobile"
+            for="field_keepFixedWidthInMobile"
+            >Keep Fixed Width In Mobile</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="keepFixedWidthInMobile"
+            id="field_keepFixedWidthInMobile"
+            data-cy="keepFixedWidthInMobile"
+            formControlName="keepFixedWidthInMobile"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollSensitivity"
+            for="field_scrollSensitivity"
+            >Scroll Sensitivity</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="scrollSensitivity"
+            id="field_scrollSensitivity"
+            data-cy="scrollSensitivity"
+            formControlName="scrollSensitivity"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollSpeed" for="field_scrollSpeed"
+            >Scroll Speed</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="scrollSpeed"
+            id="field_scrollSpeed"
+            data-cy="scrollSpeed"
+            formControlName="scrollSpeed"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellClick"
+            for="field_enableEmptyCellClick"
+            >Enable Empty Cell Click</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="enableEmptyCellClick"
+            id="field_enableEmptyCellClick"
+            data-cy="enableEmptyCellClick"
+            formControlName="enableEmptyCellClick"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellContextMenu"
+            for="field_enableEmptyCellContextMenu"
+            >Enable Empty Cell Context Menu</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="enableEmptyCellContextMenu"
+            id="field_enableEmptyCellContextMenu"
+            data-cy="enableEmptyCellContextMenu"
+            formControlName="enableEmptyCellContextMenu"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellDrop"
+            for="field_enableEmptyCellDrop"
+            >Enable Empty Cell Drop</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="enableEmptyCellDrop"
+            id="field_enableEmptyCellDrop"
+            data-cy="enableEmptyCellDrop"
+            formControlName="enableEmptyCellDrop"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellDrag"
+            for="field_enableEmptyCellDrag"
+            >Enable Empty Cell Drag</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="enableEmptyCellDrag"
+            id="field_enableEmptyCellDrag"
+            data-cy="enableEmptyCellDrag"
+            formControlName="enableEmptyCellDrag"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableOccupiedCellDrop"
+            for="field_enableOccupiedCellDrop"
+            >Enable Occupied Cell Drop</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="enableOccupiedCellDrop"
+            id="field_enableOccupiedCellDrop"
+            data-cy="enableOccupiedCellDrop"
+            formControlName="enableOccupiedCellDrop"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.emptyCellDragMaxCols"
+            for="field_emptyCellDragMaxCols"
+            >Empty Cell Drag Max Cols</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="emptyCellDragMaxCols"
+            id="field_emptyCellDragMaxCols"
+            data-cy="emptyCellDragMaxCols"
+            formControlName="emptyCellDragMaxCols"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.emptyCellDragMaxRows"
+            for="field_emptyCellDragMaxRows"
+            >Empty Cell Drag Max Rows</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="emptyCellDragMaxRows"
+            id="field_emptyCellDragMaxRows"
+            data-cy="emptyCellDragMaxRows"
+            formControlName="emptyCellDragMaxRows"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.ignoreMarginInRow"
+            for="field_ignoreMarginInRow"
+            >Ignore Margin In Row</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="ignoreMarginInRow"
+            id="field_ignoreMarginInRow"
+            data-cy="ignoreMarginInRow"
+            formControlName="ignoreMarginInRow"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.draggable" for="field_draggable"
+            >Draggable</label
+          >
+          <input type="checkbox" class="form-check" name="draggable" id="field_draggable" data-cy="draggable" formControlName="draggable" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.resizable" for="field_resizable"
+            >Resizable</label
+          >
+          <input type="checkbox" class="form-check" name="resizable" id="field_resizable" data-cy="resizable" formControlName="resizable" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.swap" for="field_swap">Swap</label>
+          <input type="checkbox" class="form-check" name="swap" id="field_swap" data-cy="swap" formControlName="swap" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.pushItems" for="field_pushItems"
+            >Push Items</label
+          >
+          <input type="checkbox" class="form-check" name="pushItems" id="field_pushItems" data-cy="pushItems" formControlName="pushItems" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disablePushOnDrag"
+            for="field_disablePushOnDrag"
+            >Disable Push On Drag</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="disablePushOnDrag"
+            id="field_disablePushOnDrag"
+            data-cy="disablePushOnDrag"
+            formControlName="disablePushOnDrag"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disablePushOnResize"
+            for="field_disablePushOnResize"
+            >Disable Push On Resize</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="disablePushOnResize"
+            id="field_disablePushOnResize"
+            data-cy="disablePushOnResize"
+            formControlName="disablePushOnResize"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.pushResizeItems" for="field_pushResizeItems"
+            >Push Resize Items</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="pushResizeItems"
+            id="field_pushResizeItems"
+            data-cy="pushResizeItems"
+            formControlName="pushResizeItems"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disableWindowResize"
+            for="field_disableWindowResize"
+            >Disable Window Resize</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="disableWindowResize"
+            id="field_disableWindowResize"
+            data-cy="disableWindowResize"
+            formControlName="disableWindowResize"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disableWarnings" for="field_disableWarnings"
+            >Disable Warnings</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="disableWarnings"
+            id="field_disableWarnings"
+            data-cy="disableWarnings"
+            formControlName="disableWarnings"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollToNewItems"
+            for="field_scrollToNewItems"
+            >Scroll To New Items</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="scrollToNewItems"
+            id="field_scrollToNewItems"
+            data-cy="scrollToNewItems"
+            formControlName="scrollToNewItems"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

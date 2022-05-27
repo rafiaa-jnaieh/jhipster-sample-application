@@ -1,0 +1,214 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dashboardConfig">
+      <h2 data-cy="dashboardConfigDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.detail.title">Dashboard Config</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.id">Id</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.margin">Margin</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.margin }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMargin">Outer Margin</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.outerMargin }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginTop">Outer Margin Top</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.outerMarginTop }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginRight">Outer Margin Right</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.outerMarginRight }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginBottom">Outer Margin Bottom</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.outerMarginBottom }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.outerMarginLeft">Outer Margin Left</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.outerMarginLeft }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.useTransformPositioning">Use Transform Positioning</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.useTransformPositioning }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.mobileBreakpoint">Mobile Breakpoint</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.mobileBreakpoint }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.useBodyForBreakpoint">Use Body For Breakpoint</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.useBodyForBreakpoint }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minCols">Min Cols</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.minCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxCols">Max Cols</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.maxCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minRows">Min Rows</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.minRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxRows">Max Rows</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.maxRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemCols">Max Item Cols</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.maxItemCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemCols">Min Item Cols</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.minItemCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemRows">Max Item Rows</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.maxItemRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemRows">Min Item Rows</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.minItemRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.maxItemArea">Max Item Area</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.maxItemArea }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.minItemArea">Min Item Area</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.minItemArea }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.defaultItemCols">Default Item Cols</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.defaultItemCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.defaultItemRows">Default Item Rows</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.defaultItemRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.fixedColWidth">Fixed Col Width</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.fixedColWidth }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.fixedRowHeight">Fixed Row Height</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.fixedRowHeight }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.keepFixedHeightInMobile">Keep Fixed Height In Mobile</span>
+        </dt>
+        <dd>
+          <span>{{ dashboardConfig.keepFixedHeightInMobile }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.keepFixedWidthInMobile">Keep Fixed Width In Mobile</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.keepFixedWidthInMobile }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollSensitivity">Scroll Sensitivity</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.scrollSensitivity }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollSpeed">Scroll Speed</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.scrollSpeed }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellClick">Enable Empty Cell Click</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.enableEmptyCellClick }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellContextMenu">Enable Empty Cell Context Menu</span>
+        </dt>
+        <dd>
+          <span>{{ dashboardConfig.enableEmptyCellContextMenu }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellDrop">Enable Empty Cell Drop</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.enableEmptyCellDrop }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableEmptyCellDrag">Enable Empty Cell Drag</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.enableEmptyCellDrag }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.enableOccupiedCellDrop">Enable Occupied Cell Drop</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.enableOccupiedCellDrop }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.emptyCellDragMaxCols">Empty Cell Drag Max Cols</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.emptyCellDragMaxCols }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.emptyCellDragMaxRows">Empty Cell Drag Max Rows</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.emptyCellDragMaxRows }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.ignoreMarginInRow">Ignore Margin In Row</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.ignoreMarginInRow }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.draggable">Draggable</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.draggable }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.resizable">Resizable</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.resizable }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.swap">Swap</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.swap }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.pushItems">Push Items</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.pushItems }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disablePushOnDrag">Disable Push On Drag</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.disablePushOnDrag }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disablePushOnResize">Disable Push On Resize</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.disablePushOnResize }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.pushResizeItems">Push Resize Items</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.pushResizeItems }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disableWindowResize">Disable Window Resize</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.disableWindowResize }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.disableWarnings">Disable Warnings</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.disableWarnings }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.dashboardConfig.scrollToNewItems">Scroll To New Items</span></dt>
+        <dd>
+          <span>{{ dashboardConfig.scrollToNewItems }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dashboard-config', dashboardConfig.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
