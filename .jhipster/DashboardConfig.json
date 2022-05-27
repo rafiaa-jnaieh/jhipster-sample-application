@@ -1,0 +1,207 @@
+{
+  "applications": "*",
+  "changelogDate": "20220527084622",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "dashboard_config",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "margin",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "outerMargin",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "outerMarginTop",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "outerMarginRight",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "outerMarginBottom",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "outerMarginLeft",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "useTransformPositioning",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "mobileBreakpoint",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "useBodyForBreakpoint",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "minCols",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxCols",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minRows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxRows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxItemCols",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minItemCols",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxItemRows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minItemRows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxItemArea",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minItemArea",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "defaultItemCols",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "defaultItemRows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fixedColWidth",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fixedRowHeight",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "keepFixedHeightInMobile",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "keepFixedWidthInMobile",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "scrollSensitivity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "scrollSpeed",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "enableEmptyCellClick",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "enableEmptyCellContextMenu",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "enableEmptyCellDrop",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "enableEmptyCellDrag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "enableOccupiedCellDrop",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "emptyCellDragMaxCols",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "emptyCellDragMaxRows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ignoreMarginInRow",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "draggable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "resizable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "swap",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pushItems",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "disablePushOnDrag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "disablePushOnResize",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pushResizeItems",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "disableWindowResize",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "disableWarnings",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "scrollToNewItems",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DashboardConfig",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userProfile",
+      "otherEntityRelationshipName": "dashboardConfig",
+      "relationshipName": "userProfile",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
