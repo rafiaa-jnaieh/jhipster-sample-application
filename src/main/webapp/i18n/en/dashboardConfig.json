@@ -1,0 +1,69 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "dashboardConfig": {
+      "home": {
+        "title": "Dashboard Configs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dashboard Config",
+        "createOrEditLabel": "Create or edit a Dashboard Config",
+        "notFound": "No Dashboard Configs found"
+      },
+      "created": "A new Dashboard Config is created with identifier {{ param }}",
+      "updated": "A Dashboard Config is updated with identifier {{ param }}",
+      "deleted": "A Dashboard Config is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dashboard Config {{ id }}?"
+      },
+      "detail": {
+        "title": "Dashboard Config"
+      },
+      "id": "Id",
+      "margin": "Margin",
+      "outerMargin": "Outer Margin",
+      "outerMarginTop": "Outer Margin Top",
+      "outerMarginRight": "Outer Margin Right",
+      "outerMarginBottom": "Outer Margin Bottom",
+      "outerMarginLeft": "Outer Margin Left",
+      "useTransformPositioning": "Use Transform Positioning",
+      "mobileBreakpoint": "Mobile Breakpoint",
+      "useBodyForBreakpoint": "Use Body For Breakpoint",
+      "minCols": "Min Cols",
+      "maxCols": "Max Cols",
+      "minRows": "Min Rows",
+      "maxRows": "Max Rows",
+      "maxItemCols": "Max Item Cols",
+      "minItemCols": "Min Item Cols",
+      "maxItemRows": "Max Item Rows",
+      "minItemRows": "Min Item Rows",
+      "maxItemArea": "Max Item Area",
+      "minItemArea": "Min Item Area",
+      "defaultItemCols": "Default Item Cols",
+      "defaultItemRows": "Default Item Rows",
+      "fixedColWidth": "Fixed Col Width",
+      "fixedRowHeight": "Fixed Row Height",
+      "keepFixedHeightInMobile": "Keep Fixed Height In Mobile",
+      "keepFixedWidthInMobile": "Keep Fixed Width In Mobile",
+      "scrollSensitivity": "Scroll Sensitivity",
+      "scrollSpeed": "Scroll Speed",
+      "enableEmptyCellClick": "Enable Empty Cell Click",
+      "enableEmptyCellContextMenu": "Enable Empty Cell Context Menu",
+      "enableEmptyCellDrop": "Enable Empty Cell Drop",
+      "enableEmptyCellDrag": "Enable Empty Cell Drag",
+      "enableOccupiedCellDrop": "Enable Occupied Cell Drop",
+      "emptyCellDragMaxCols": "Empty Cell Drag Max Cols",
+      "emptyCellDragMaxRows": "Empty Cell Drag Max Rows",
+      "ignoreMarginInRow": "Ignore Margin In Row",
+      "draggable": "Draggable",
+      "resizable": "Resizable",
+      "swap": "Swap",
+      "pushItems": "Push Items",
+      "disablePushOnDrag": "Disable Push On Drag",
+      "disablePushOnResize": "Disable Push On Resize",
+      "pushResizeItems": "Push Resize Items",
+      "disableWindowResize": "Disable Window Resize",
+      "disableWarnings": "Disable Warnings",
+      "scrollToNewItems": "Scroll To New Items",
+      "userProfile": "User Profile"
+    }
+  }
+}
